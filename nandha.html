@@ -1,0 +1,650 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Pavi ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   BASIC SETTINGS
+========================= */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#09050a;
+    color:#fff;
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    padding:70px 20px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #4b172c 0,
+            #190b14 38%,
+            #09050a 75%
+        );
+
+    text-align:center;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,125,170,.16) 1px,
+            transparent 1px
+        );
+
+    background-size:35px 35px;
+    opacity:.35;
+
+    animation:drift 15s linear infinite;
+}
+
+@keyframes drift{
+    to{
+        background-position:140px 140px;
+    }
+}
+
+.content{
+    position:relative;
+    z-index:2;
+    max-width:850px;
+}
+
+.small{
+    letter-spacing:5px;
+    text-transform:uppercase;
+    font-size:12px;
+    color:#eab3c9;
+    margin-bottom:22px;
+}
+
+h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(72px,14vw,150px);
+    line-height:.8;
+    font-weight:600;
+}
+
+.name{
+    font-style:italic;
+    color:#f3b3c9;
+}
+
+.date{
+    margin-top:30px;
+    font-size:15px;
+    letter-spacing:3px;
+    color:#d7a8ba;
+}
+
+.scroll{
+    margin-top:65px;
+    font-size:12px;
+    color:#c69aad;
+    letter-spacing:2px;
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+    50%{
+        transform:translateY(8px);
+    }
+}
+
+
+/* =========================
+   STORY
+========================= */
+
+.story{
+    background:linear-gradient(
+        180deg,
+        #09050a,
+        #160912
+    );
+}
+
+.card{
+    max-width:760px;
+    text-align:center;
+}
+
+.card h2,
+.memories h2,
+.letter h2,
+.final h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(45px,8vw,75px);
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+.card p{
+    font-size:17px;
+    line-height:1.9;
+    color:#d9c4ce;
+}
+
+.heart{
+    font-size:34px;
+    margin-bottom:18px;
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    50%{
+        transform:scale(1.2);
+    }
+}
+
+
+/* =========================
+   MEMORIES
+========================= */
+
+.memories{
+    background:#0d070c;
+    display:block;
+    padding-top:100px;
+}
+
+.memories .inner{
+    max-width:1150px;
+    margin:auto;
+    text-align:center;
+}
+
+.subtitle{
+    color:#cba9b7;
+    margin-bottom:45px;
+}
+
+
+/* =========================
+   PHOTO GALLERY
+========================= */
+
+.gallery{
+    display:grid;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap:18px;
+
+    align-items:start;
+}
+
+
+/* PHOTO CARD */
+
+.photo{
+    height:390px;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #321423,
+            #170b12
+        );
+
+    border:1px solid #5d3045;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.35);
+
+    cursor:pointer;
+
+    transition:
+        transform .5s ease,
+        box-shadow .5s ease;
+}
+
+
+/* REAL IMAGE */
+
+.photo img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:
+        transform .7s ease,
+        filter .5s ease;
+}
+
+
+/* IMAGE HOVER */
+
+.photo:hover{
+    transform:translateY(-12px) scale(1.02);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.6);
+}
+
+.photo:hover img{
+    transform:scale(1.08);
+
+    filter:brightness(1.08);
+}
+
+
+/* ALTERNATING PHOTOS */
+
+.photo:nth-child(even){
+    transform:translateY(35px);
+}
+
+.photo:nth-child(even):hover{
+    transform:translateY(20px) scale(1.02);
+}
+
+
+/* CAPTION */
+
+.caption{
+    position:absolute;
+
+    bottom:0;
+    left:0;
+    right:0;
+
+    padding:35px 15px 18px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,.85)
+        );
+
+    color:white;
+
+    font-size:13px;
+
+    text-align:left;
+
+    opacity:0;
+
+    transition:.4s;
+}
+
+.photo:hover .caption{
+    opacity:1;
+}
+
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox{
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.92);
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    z-index:999;
+
+    padding:25px;
+}
+
+.lightbox.active{
+    display:flex;
+}
+
+.lightbox img{
+    max-width:92%;
+    max-height:88vh;
+
+    object-fit:contain;
+
+    border-radius:15px;
+
+    box-shadow:
+        0 20px 80px rgba(0,0,0,.8);
+}
+
+.close{
+    position:absolute;
+
+    top:25px;
+    right:35px;
+
+    font-size:40px;
+
+    color:white;
+
+    cursor:pointer;
+
+    z-index:1000;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter{
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            #321021,
+            #0a0509 70%
+        );
+
+    text-align:center;
+}
+
+.letter-box{
+    max-width:750px;
+
+    border:1px solid #603147;
+
+    border-radius:25px;
+
+    padding:50px 42px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    box-shadow:
+        0 20px 80px rgba(0,0,0,.4);
+}
+
+.letter-box p{
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:25px;
+
+    line-height:1.65;
+
+    color:#f1dce5;
+}
+
+.signature{
+    margin-top:28px;
+
+    color:#d999b3;
+
+    font-size:14px;
+
+    letter-spacing:2px;
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.final{
+    text-align:center;
+
+    background:#080408;
+
+    overflow:hidden;
+}
+
+.final h2{
+    font-size:clamp(
+        55px,
+        10vw,
+        100px
+    );
+}
+
+.final p{
+    color:#c9aeb9;
+
+    max-width:650px;
+
+    line-height:1.8;
+
+    margin:
+        0 auto 35px;
+}
+
+.btn{
+    display:inline-block;
+
+    padding:15px 30px;
+
+    border:
+        1px solid #b66a88;
+
+    border-radius:50px;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    letter-spacing:1px;
+
+    transition:.3s;
+
+    cursor:pointer;
+}
+
+.btn:hover{
+    background:#b66a88;
+
+    transform:scale(1.05);
+}
+
+#burst{
+    font-size:45px;
+
+    margin-top:30px;
+
+    min-height:55px;
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.floating-heart{
+    position:fixed;
+
+    bottom:-30px;
+
+    color:#e99ab7;
+
+    pointer-events:none;
+
+    animation:
+        float 8s linear forwards;
+
+    opacity:.5;
+
+    z-index:10;
+}
+
+@keyframes float{
+
+    to{
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity:0;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:1000px){
+
+    .gallery{
+        grid-template-columns:
+            repeat(3,1fr);
+    }
+
+}
+
+@media(max-width:700px){
+
+    .gallery{
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:12px;
+    }
+
+    .photo{
+        height:300px;
+    }
+
+    .photo:nth-child(even){
+        transform:none;
+    }
+
+    .photo:nth-child(even):hover{
+        transform:
+            translateY(-8px)
+            scale(1.02);
+    }
+
+    .caption{
+        opacity:1;
+    }
+
+    .letter-box{
+        padding:35px 22px;
+    }
+
+    .letter-box p{
+        font-size:21px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .photo{
+        height:420px;
+    }
+
+    .small{
+        letter-spacing:3px;
+    }
+
+}
+
+
+/* =========================
+   FADE ANIMATION
+========================= */
+
+.fade{
+    opacity:0;
+    transform:translateY(30px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="content">
+
+        <div class="small">
+            A little birthday surprise for
+        </div>
+
+        <h1>
+            <span class="name">
+                Pavi
+            </span>
+        </h1>
+
+        <div class="date">
+```
